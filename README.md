@@ -1,0 +1,1 @@
+This is a sample project for end to end deployment on the cloud platform
