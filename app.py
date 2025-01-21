@@ -3,6 +3,7 @@ import numpy
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import pickle
 
 #data preprocessing
 path = "data/data.csv"
@@ -22,3 +23,7 @@ accuracy=accuracy_score(y_test,y_pred)
 
 print(f"Few of the predicted classes are {y_pred[1]}, {y_pred[2]}")
 print(f"We got -- {accuracy} as accuracy score")
+
+filename = 'model/diabetes_model.pkl'
+pickle.dump(model, open(filename, 'wb'))
+print("Model has been saved")
