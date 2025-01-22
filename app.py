@@ -25,7 +25,7 @@ def diabetes_pred(input_parameters: model_input):
     input_data = input_parameters.json()
     input_dictionary= json.loads(input_data)
 
-    preg = input_dictionary['Pregnencies']
+    preg = input_dictionary['Pregnancies']
     glu = input_dictionary['Glucose']
     bp = input_dictionary['BloodPressure']
     skin = input_dictionary['SkinThickness']
@@ -36,7 +36,7 @@ def diabetes_pred(input_parameters: model_input):
 
     input_list = [preg,glu,bp,skin,insulin,bmi,dpf,age]
 
-    prediction = diabetes_model.predic([input_list])
+    prediction = diabetes_model.predict([input_list])
 
     if prediction[0]==0:
         return "Person is not diabetic"
